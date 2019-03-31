@@ -5,7 +5,7 @@ Team Members: Loveleen Bangar, Fatema Nourzaie, Grace Hsu
 
 Purpose: 
 -	Examine the air quality (PM2.5, PM10, Ozone(O3), NO2, SO2, CO, black carbon (BC)) in the USA and globally.
-o	In the USA, we will dive deeper into the analysis and look at the city and state level.
+- In the USA, we will dive deeper into the analysis and look at the city and state level.
 
 Data Sources:
 -	https://docs.openaq.org/
