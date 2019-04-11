@@ -31,52 +31,52 @@ db = client.air_quality_db
 
 
 ###################################################
-# # create collection in the database and insert documents
-# # to store gas parameters into mongodb database
-# gas_list = getGases()
+# create collection in the database and insert documents
+# to store gas parameters into mongodb database
+gas_list = getGases()
 
-# # drop collection if available to remove duplicates
-# db.gases.drop()
+# drop collection if available to remove duplicates
+db.gases.drop()
 
-# db.gases.insert_many(
-# 	gas_list
-# )
-
-# ####################################################
-# # Get latest measurements and store into mongodb
-
-# gasParameters = ['bc', 'co', 'no2', 'o3', 'pm10', 'pm25', 'so2']
-
-# latestParamMeasurement = []
-# for each in gasParameters:
-# 	currentParam = getLatestParamMeasurement(each)
-# 	latestParamMeasurement.append(currentParam)
-
-
-# # drop any duplicates
-# db.airQualityParamMeasurements.drop()
-
-# # insert data
-# for each in latestParamMeasurement:
-
-# 	db.airQualityParamMeasurements.insert_many(
-# 		each
-# 		)
-
-
-# #####################################################
-# # get today's date and time
-# now = {"request_date": dt.datetime.now()}
-
-# # drop any duplicate dates stored as the request date
-# db.airQualityMeasurementsDate.drop()
-
-# # store the request date as a collection in mongodb
-# db.airQualityMeasurementsDate.insert_one(
-# 	now
-# 	)
+db.gases.insert_many(
+	gas_list
+)
 
 ####################################################
+# Get latest measurements and store into mongodb
+
+gasParameters = ['bc', 'co', 'no2', 'o3', 'pm10', 'pm25', 'so2']
+
+latestParamMeasurement = []
+for each in gasParameters:
+	currentParam = getLatestParamMeasurement(each)
+	latestParamMeasurement.append(currentParam)
+
+
+# drop any duplicates
+db.airQualityParamMeasurements.drop()
+
+# insert data
+for each in latestParamMeasurement:
+
+	db.airQualityParamMeasurements.insert_many(
+		each
+		)
+
+
+#####################################################
+# get today's date and time
+now = {"request_date": dt.datetime.now()}
+
+# drop any duplicate dates stored as the request date
+db.airQualityMeasurementsDate.drop()
+
+# store the request date as a collection in mongodb
+db.airQualityMeasurementsDate.insert_one(
+	now
+	)
+
+###################################################
 
 @app.route("/")
 def home():
