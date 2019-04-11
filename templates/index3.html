@@ -33,6 +33,40 @@
 </head>
 
 <body>
+      <!-- Start of navbar -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand brand-name" href="/"><strong>Project 2</strong></a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="myNavbar">           
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Data<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/usData">United States</a></li>
+                <li><a href="/globalData">Global</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Analysis<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/countryContribution">Global</a></li>
+                <li><a href="/usAnalysisO3">United States</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End of navbar -->
+    
     <div class="container"> 
         <h1>Air Quality Analysis</h1>
         
@@ -40,7 +74,7 @@
           <button class="btn btn-primary dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">Select Gas
           <span class="caret"></span></button>
           <ul class="dropdown-menu" role="menu" aria-labelledby="menu1" >
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="/usAnalysis03">Ozone (O3)</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="/usAnalysisO3">Ozone (O3)</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="/usAnalysisPM25">Particulate matter (PM2.5)</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="/usAnalysisPM10">Particulate matter (PM10)</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="/usAnalysisSO2"> Sulfur Dioxide (SO2)</a></li>    
