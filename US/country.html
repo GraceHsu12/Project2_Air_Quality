@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Country Records</title>
+
+
+  <!--D3 cdn-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+</head>
+
+<body>
+        <h1>Countries contributing to air quality data:</h1>
+        <h3>Hover on graph bar to see each country name and number of records.</h3>
+        <br>
+        <canvas id="myChart"  ></canvas>
+
+      </div>
+
+  <script>
+    c_name = [];
+    c_count = [];
+
+    var url = "https://api.openaq.org/v1/countries";
+
+   d3.json(url, function(data){
+  var feature = data.results;
+  feature.forEach(function(d){
+    if (d.name != 'Israel'){
+    var name_con = d.name;
+    c_name.push(name_con);
+    var count_con = d.count;
+    c_count.push(count_con);
+
+    }
+  });
+  console.log(c_count)
+
+  var ctx = document.getElementById('myChart').getContext('2d');
+  var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: c_name,
+      
+      datasets: [{
+        label: 'Counties',
+        data: c_count,
+        backgroundColor: "purple"
+      } ]
+    },
+    
+  });
+});
+  </script>
+</body>
+</html>
