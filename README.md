@@ -12,6 +12,8 @@ Data Sources:
 
 Visualizations:
 -	Using Mapbox/leaflet we will create a map representation of the different air quality parameters globally.
--	Using bar graphs we can look at the air quality parameters individually at the city/state level
--	Using scatter/line plot to look at the changes in air quality parameters over time
+-	Using scatter/line plot to look at the differences in air quality parameters
 
+Programming Languages/Databases/Libraries:
+- Python, HTML, CSS, Javascript, Bootstrap.js, D3.js, Chart.js
+- MongoDB
